@@ -5,7 +5,8 @@
 ##12/26
 
 ###Variables
-let , const
+
+- let , const, var
 
 ```
 let vs const
@@ -16,11 +17,21 @@ let vs const
 
 ### Booleans
 
-true, false
+- true, false
 
-```
+```js
 * true 타입
 * false 타입
 * null 타입 (파이썬에서는 None)
 * undefined 타입
+```
+
+###Arrays
+
+- [ ]안에 어떤 타입이든 쓸 수 있다.
+
+```js
+const array = [1,2,"hello",false,null,undefined];
+console.log(array[2]); // hello가 출력
+array.push(4) - array에 4 추가하기
 ```
