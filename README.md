@@ -135,3 +135,15 @@ if (isNaN(age) || age < 0) {
   console.log("Thank you for writing your age");
 }
 ```
+
+### Document Object
+
+- 이미 존재하는 객체, 연결된 html 객체를 가리킴
+- 브라우저가 html정보를 document라는 object으로 자바스크립트에게 전달
+- 자바스크립트 관점으로 보는 html 정보들이 담긴 객체
+
+```js
+console.dir(document);
+document.body; //html의 body부분만
+document.title = "Change Title"; // html title 바꾸기
+```
