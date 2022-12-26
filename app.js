@@ -1,12 +1,14 @@
-const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+const player = {
+  name: "changmin",
+  points: 10,
+  habit: ["basket", "game"],
+};
+console.log(player);
+console.log(player.name);
+console.log(player.habit[0]);
 
-//get Item from Array
-console.log(daysOfWeek[1]);
+//add property and value to the Object
+player.lastname = "Han";
+player.points += 15;
 
-//Add one more day to the Array
-daysOfWeek.push("sum");
-
-const toBuy = ["potato", "tomato"];
-toBuy.push("pizza");
-
-console.log(toBuy[2]);
+console.log(player);

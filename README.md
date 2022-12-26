@@ -35,3 +35,19 @@ const array = [1,2,"hello",false,null,undefined];
 console.log(array[2]); // hello가 출력
 array.push(4) - array에 4 추가하기
 ```
+
+###Objects
+
+- { } 안에 property와 value 적기
+- value로 array도 들어갈 수 있음
+
+```js
+const player  {
+    name : "changmin",
+    age : 3,
+    habit : ['basketball','game'],
+}
+console.log(player.habit[0])
+player.lastname="Han" //object에 property추가가능
+player.age += 1 // value update 가능
+```
