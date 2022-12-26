@@ -111,3 +111,27 @@ const calculater = {
 };
 console.log(calculater.plus(1, 6));
 ```
+
+## 12/27
+
+### Conditional
+
+- prompt() : 사용자의 입력받아 string타입으로 return, 하지만 입력전까지 브라우저가 멈추고 css적용불가해서 잘 안쓴다
+- typeof &lt;variable &gt; : variable의 타입을 return, typeof( ) <---- 이렇게 안쓴다
+- parseInt() : string형을 int형으로 변환해줌
+- isNaN() : 숫자인지 아닌지 판단해줌 true라면 숫자아님, false라면 숫자
+- && : AND조건
+- || : OR조건
+
+```js
+const age = parseInt(prompt("How old are you"));
+console.log(typeof age);
+
+if (isNaN(age) || age < 0) {
+  console.log("Please write a number");
+} else if (age < 18) {
+  console.log("Your are too young");
+} else {
+  console.log("Thank you for writing your age");
+}
+```
