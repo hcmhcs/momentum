@@ -1,11 +1,16 @@
-function sayHello(name, age) {
-  console.log("Hello " + name + " Your age is " + age);
-}
-
-const player = {
-  name: "Changmin",
-  sayHello2: function () {
-    console.log("Hello " + player.name);
+//더하기 계산기
+const calculater = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  devide: function (a, b) {
+    return a / b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  power: function (a, b) {
+    return a ** b;
   },
 };
-player.sayHello2();
+console.log(calculater.plus(1, 6));

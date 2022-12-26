@@ -22,7 +22,7 @@ const run = true;
 const opt = false;
 ```
 
-###Arrays
+### Arrays
 
 - [ ]안에 어떤 타입이든 쓸 수 있다.
 - array.push()
@@ -33,7 +33,7 @@ console.log(array[2]); // hello가 출력
 array.push(4) - array에 4 추가하기
 ```
 
-###Objects
+### Objects
 
 - { } 안에 property와 value 적기
 - value로 array도 들어갈 수 있음
@@ -77,3 +77,37 @@ palyer.sayHello();
 ```
 
 // 추가로 더 공부하면 좋을 것 : arrow function
+
+### Return
+
+- function에 return (C언어랑 똑같다)
+-
+
+```js
+function plus(a, b) {
+  return a + b;
+}
+const result = plus(10, 2);
+
+console.log(result);
+```
+
+- 계산기 예제(Object와 function 사용)
+
+```js
+const calculater = {
+  plus: function (a, b) {
+    return a + b;
+  },
+  devide: function (a, b) {
+    return a / b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  power: function (a, b) {
+    return a ** b;
+  },
+};
+console.log(calculater.plus(1, 6));
+```
