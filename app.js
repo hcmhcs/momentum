@@ -1,14 +1,11 @@
+function sayHello(name, age) {
+  console.log("Hello " + name + " Your age is " + age);
+}
+
 const player = {
-  name: "changmin",
-  points: 10,
-  habit: ["basket", "game"],
+  name: "Changmin",
+  sayHello2: function () {
+    console.log("Hello " + player.name);
+  },
 };
-console.log(player);
-console.log(player.name);
-console.log(player.habit[0]);
-
-//add property and value to the Object
-player.lastname = "Han";
-player.points += 15;
-
-console.log(player);
+player.sayHello2();
