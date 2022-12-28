@@ -1,6 +1,7 @@
-const title = document.querySelector(".hello h1");
+const title = document.querySelector("div.hello:first-child h1");
 
-console.log(title);
+function handleTitleClick() {
+  console.log("title was clicked");
+}
 
-const title1 = document.querySelector("#hello");
-const title2 = document.getElementById("hello");
+title.addEventListener("click", handleTitleClick);

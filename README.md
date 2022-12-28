@@ -143,7 +143,7 @@ if (isNaN(age) || age < 0) {
 - 자바스크립트 관점으로 보는 html 정보들이 담긴 객체
 
 ```js
-console.dir(document);
+console.dir(document); // element의 내부를 보여준다.
 document.body; //html의 body부분만
 document.title = "Change Title"; // html title 바꾸기
 ```
@@ -178,6 +178,7 @@ const title = document.getElementsByTagName("h1");
 
 - element를 CSS방식으로 불러오기, 가장 추천하는 방식
 - querySelector : 한개를 return해준다. 조건에 맞는 여러개가 있다면 그중 첫번째것만 return해준다.
+  ex) document.querySelector("div.hello:firstchild h1")
 - querySelectorAll : 조건에 맞는 여러개를 array형식으로 return해준다.
 
 ```js
@@ -188,4 +189,34 @@ const title = document.querySelector("div h1");
 //위, 아래가 같은 이야기이다.
 const title = document.querySelector("#hello");
 const title = document.getElementById("hello");
+const title = document.querySelector("div.hello:first-child h1");
+//class hello를 가진 div 내부의 first-child인 h1를 찾는것
+```
+
+### 간단한 css
+
+- "#" - id를 의미
+- "." - class를 의미
+
+### Events
+
+- style은 h1 객체 내부에 있는 하나의 객체이다. (javascript형식으로 된)
+- 그안에 color가 있다.
+
+```js
+title.style.color = "blue";
+//이러면 h1의 style을 javascript에서 변경할 수 있다.
+```
+
+- 대부분은 javascript에서 event를 listen 한다.(event는 클릭,키보드 등)
+
+```js
+const title = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+  console.log("title was clicked");
+}
+
+title.addEventListener("click", handleTitleClick);
+//title을 click하는 것을 listen하고 click되면 함수가 작동한다.
 ```
