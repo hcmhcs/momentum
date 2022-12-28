@@ -147,3 +147,19 @@ console.dir(document);
 document.body; //html의 body부분만
 document.title = "Change Title"; // html title 바꾸기
 ```
+
+## 12/28
+
+###
+
+- document객체와 element를 가져오는 수많은 함수 이용
+- 자바스크립트에서 html을 객체로 가져올수도있고 값을 바꿀 수도 있다.
+- 자바스크립트에서 html을 가져오는 다른 방법도 있다.
+
+```js
+const title = document.getElementById("id name");
+console.dir(title);
+console.log(title.className);
+
+title.innerText = "Change!!";
+```

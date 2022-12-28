@@ -1,3 +1,6 @@
-console.log(document);
-console.dir(document);
-document.title = "Change Title";
+const title = document.getElementById("title");
+
+title.innerText = "Got you";
+
+console.log(title.id);
+console.log(title.className);
