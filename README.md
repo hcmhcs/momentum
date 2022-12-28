@@ -150,9 +150,9 @@ document.title = "Change Title"; // html title 바꾸기
 
 ## 12/28
 
-###
+### document.getElementById()
 
-- document객체와 element를 가져오는 수많은 함수 이용
+- document객체와 element를 가져오는 수많은 함수를 이용하자
 - 자바스크립트에서 html을 객체로 가져올수도있고 값을 바꿀 수도 있다.
 - 자바스크립트에서 html을 가져오는 다른 방법도 있다.
 
@@ -162,4 +162,30 @@ console.dir(title);
 console.log(title.className);
 
 title.innerText = "Change!!";
+```
+
+### 이외에 함수들
+
+- getElementByClassName : 많은 element를 한번에 가져와야할때 사용, array를 리턴
+  (대부분 classname을 여러곳에 만들지 않는다)
+- getElementByTagName : anchor,div,section,button 같은 tag의 name으로 element가져오기, array로 가져옴
+
+```js
+const title = document.getElementsByTagName("h1");
+```
+
+### querySelector
+
+- element를 CSS방식으로 불러오기, 가장 추천하는 방식
+- querySelector : 한개를 return해준다. 조건에 맞는 여러개가 있다면 그중 첫번째것만 return해준다.
+- querySelectorAll : 조건에 맞는 여러개를 array형식으로 return해준다.
+
+```js
+//hello class에서 h1태그를 가져오기
+const title = document.querySelector(".hello h1");
+const title = document.querySelector("div h1");
+
+//위, 아래가 같은 이야기이다.
+const title = document.querySelector("#hello");
+const title = document.getElementById("hello");
 ```
