@@ -248,3 +248,34 @@ title.addEventListener("click", handleTitleClick);
 title.addEventListener("mouseenter", handleMouseEnter);
 title.addEventListener("mouseleave", handleMouseLeave);
 ```
+
+### more Events
+
+- event를 사용하는 다른 방법(비추)
+- .addEventListener 방법으로는 .removeEventListener로 event listener를 제거할 수 있다.
+
+```js
+title.addEventListener("click", handleTitleClick);
+title.onclick = handleTitleClick;
+```
+
+- window도 자바스크립트에서 제공하는 객체이다. (document같은 거)
+- window도 event가 있다.
+
+```js
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
+window.addEventListener("resize", handleWindowResize);
+```
+
+- document의 body,head,title은 바로 가져올 수 있다
+
+```js
+document.body;
+document.head;
+document.title;
+```
+
+- div,h1 같은 element들은 getElementById,querySelector로 가져와야됨
+- 다른 window의 event들 (resize, copy, offline,online)
