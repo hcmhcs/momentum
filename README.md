@@ -220,3 +220,31 @@ function handleTitleClick() {
 title.addEventListener("click", handleTitleClick);
 //title을 click하는 것을 listen하고 click되면 함수가 작동한다.
 ```
+
+## 12/31
+
+### Events 2
+
+- https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
+- 해당사이트에서 html의 event들을 확인해볼 수 있다.
+- console.dir(title) 와 같이 h1의 element들을 보고 "on"이 붙여져 있으면 event이다.
+
+```js
+const title = document.querySelector("div.hello:first-child h1");
+
+console.dir(title);
+
+function handleTitleClick() {
+  title.style.color = "blue";
+}
+
+function handleMouseEnter() {
+  title.innerText = "Mouse is here";
+}
+function handleMouseLeave() {
+  title.innerText = "Mouse is gone!";
+}
+title.addEventListener("click", handleTitleClick);
+title.addEventListener("mouseenter", handleMouseEnter);
+title.addEventListener("mouseleave", handleMouseLeave);
+```
