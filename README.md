@@ -120,6 +120,8 @@ console.log(calculater.plus(1, 6));
 - typeof &lt;variable &gt; : variable의 타입을 return, typeof( ) <---- 이렇게 안쓴다
 - parseInt() : string형을 int형으로 변환해줌
 - isNaN() : 숫자인지 아닌지 판단해줌 true라면 숫자아님, false라면 숫자
+- === : 같다
+- !-- : 다르다
 - && : AND조건
 - || : OR조건
 
@@ -279,3 +281,24 @@ document.title;
 
 - div,h1 같은 element들은 getElementById,querySelector로 가져와야됨
 - 다른 window의 event들 (resize, copy, offline,online)
+
+### CSS in Javascript
+
+- 조건문을 활용해 css를 바꿔보자
+
+```js
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+  const currentColor = h1.style.color;
+  let newColor; //let은 변수값을 변경시킬 수 있으니까
+  if (currentColor === "blue") {
+    newColor = "tomato";
+  } else {
+    newColor = "blue";
+  }
+  h1.style.color = newColor;
+}
+
+h1.addEventListener("click", handleTitleClick);
+```
