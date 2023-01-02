@@ -334,3 +334,34 @@ function handleTitleClick() {
 
 h1.addEventListener("click", handleTitleClick);
 ```
+
+- 위에 방법으로는 원래의 className을 기억못하고 바뀌어버린다.
+- className 을 바꾸는 다른방법 --> classList
+
+### classList
+
+- classList는 class들의 목록으로 작업할 수 있게 허용
+- 참고사이트 : https://developer.mozilla.org/ko/docs/Web/API/DOMTokenList
+- .contains() : HTML element의 class에 포함되어있는지 말해준다.
+- .remove() : classList에 class 제거
+- .add() : classList에 class 추가
+
+```js
+function handleTitleClick() {
+  const clickedClass = "clicked";
+  if (h1.classList.contains(clickedClass)) {
+    h1.classList.remove(clickedClass);
+  } else {
+    h1.classList.add(clickedClass);
+  }
+}
+```
+
+- .toggle() : 해당 class가 있으면 삭제, 없으면 추가해줌, 위에랑 똑같이 작동하는 코드
+
+```js
+function handleTitleClick() {
+  const clickedClass = "clicked";
+  h1.classList.toggle(clickedClass);
+}
+```
