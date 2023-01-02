@@ -302,3 +302,35 @@ function handleTitleClick() {
 
 h1.addEventListener("click", handleTitleClick);
 ```
+
+## 1/2
+
+### CSS in Javascript 2
+
+- javascript가 html을 변경하고, css는 html을 바라보고있다.
+- javascript로 태그에 class를 변경해주고 이미 css에 class에 대한 설정값이 있어서 변경되는것처럼 확인할 수 있다.
+
+```css
+h1 {
+  color: cornflowerblue;
+}
+
+.active {
+  color: tomato;
+}
+```
+
+```js
+const h1 = document.querySelector("div.hello:first-child h1");
+
+function handleTitleClick() {
+  const clickedClass = "clicked";
+  if (h1.className === clickedClass) {
+    h1.className = "";
+  } else {
+    h1.className = clickedClass;
+  }
+}
+
+h1.addEventListener("click", handleTitleClick);
+```
