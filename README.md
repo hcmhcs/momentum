@@ -429,7 +429,7 @@ function handleLoginBtmClick() {
 </body>
 ```
 
-### submit Event 1
+### Event 1
 
 - submit 이벤트가 발생해서 onLoginSubmit함수를 실행시킬때 submit이벤트에서 발생한 정보를 인자로 onLoginSubmit함수를 실행한다.
 - 모든 eventListener fucntion의 첫번째 argument는 항상 event에 대한 정보들을 제공한다.
@@ -441,3 +441,17 @@ function onLoginSubmit(event) {
   console.log(loginInput.value);
 }
 ```
+
+### Event 2
+
+- 링크를 통해 이동하는 브라우저의 기본동작을 막아본다.
+
+```html
+<a href="https://nomadcoders.co">Go to courses</a>>
+```
+
+```js
+
+```
+
+안녕하세요
