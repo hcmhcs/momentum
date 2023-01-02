@@ -365,3 +365,66 @@ function handleTitleClick() {
   h1.classList.toggle(clickedClass);
 }
 ```
+
+### input values
+
+```html
+<body>
+  <div id="login-form">
+    <input type="text" placeholder="What is your name?" />
+    <button>Log In</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+```
+
+```js
+//const loginForm = document.querySelector("#login-form");
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
+//const loginInput = document.querySelector("#login-form input")
+const loginButton = loginForm.querySelector("button");
+
+function handleLoginBtmClick() {
+  console.dir(loginInput); //이걸로 입력한게 무슨 변수명으로 들어오는지 확인가능
+  console.log("hello", loginInput.value);
+}
+
+loginButton.addEventListener("click", handleLoginBtmClick);
+```
+
+### check Username
+
+- input에 유효한 username이 들어오는지 확인
+- js에서 if문으로 유효성검사를 할수있다.
+
+```js
+function handleLoginBtmClick() {
+  const username = loginInput.value;
+  if (username === "") {
+    console.log("Please write your name");
+  } else if (username.length > 15) {
+    alert("Your name is too long.");
+  } else {
+    console.log("hello", username);
+  }
+}
+```
+
+- html에서도 할 수 있다. 이방법을 쓸땐 input이 form안에 있어야된다.
+- form안에 넣었을때 enter나 click하면 form이 전송되고 페이지가 새로고침된다.
+
+```html
+<body>
+  <form id="login-form">
+    <input
+      required
+      maxlength="15"
+      type="text"
+      placeholder="What is your name?"
+    />
+    <button>Log In</button>
+  </form>
+  <script src="app.js"></script>
+</body>
+```
