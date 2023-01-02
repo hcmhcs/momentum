@@ -428,3 +428,16 @@ function handleLoginBtmClick() {
   <script src="app.js"></script>
 </body>
 ```
+
+### submit Event 1
+
+- submit 이벤트가 발생해서 onLoginSubmit함수를 실행시킬때 submit이벤트에서 발생한 정보를 인자로 onLoginSubmit함수를 실행한다.
+- 모든 eventListener fucntion의 첫번째 argument는 항상 event에 대한 정보들을 제공한다.
+
+```js
+function onLoginSubmit(event) {
+  event.preventDefault();
+  console.log(event);
+  console.log(loginInput.value);
+}
+```
