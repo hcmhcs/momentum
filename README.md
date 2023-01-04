@@ -615,3 +615,26 @@ function getClock() {
   clock.innerText = `${hours} : ${minutes} : ${seconds}`;
 }
 ```
+
+---
+
+# Quotes and BackGround
+
+### Quotes
+
+- 인용구에서 랜던한 Index를 보여주기 위해 Math 모듈사용(js에서 이미 load됨)
+- Math.random() : 0~1사이에 랜덤한 숫자제공
+- Math.round() : 소수점 반올림
+- Math.ceil : 올림
+- Math.floor : 내림
+
+```js
+const quoes = [];
+const quote = document.querySelector("#quote span:first-child");
+const author = document.querySelector("#quote span:last-child");
+
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+quote.innerText = todaysQuote.quote;
+author.innerText = `- ${todaysQuote.author}`;
+```
