@@ -442,16 +442,20 @@ function onLoginSubmit(event) {
 }
 ```
 
+## 1/4
+
 ### Event 2
 
 - 링크를 통해 이동하는 브라우저의 기본동작을 막아본다.
+- js가 handle함수를 실행시킬때 event에 대한 정보가 담긴 object를 인자로 넘겨준다.
 
 ```html
 <a href="https://nomadcoders.co">Go to courses</a>>
 ```
 
 ```js
-
+function handleLinkClick() {
+  alert("Click!");
+}
+link.addEventListener("click", handleLinkClick);
 ```
-
-안녕하세요
