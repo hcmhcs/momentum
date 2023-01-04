@@ -554,13 +554,47 @@ if (savedUsername === null) {
 
 ---
 
-### Clock
+# Clock
+
+### Intervals
 
 - intervals : 매번 일어나야 하는 무언가 ex) 매 2초
-- setInterval(함수, 초) : 몇 초마다 함수가 호출된다.
+- setInterval(함수, 초) : 몇 초마다 함수가 호출된다.(초는 ms단위)
 
 ```js
+const clock = document.querySelector("h2#clock");
 
+function sayHello() {
+  console.log("hello");
+}
+
+setInterval(sayHello, 5000);
 ```
 
-- timeout
+### Timeout and Date
+
+- timeout : 바로 실행되지 않고 몇 초 뒤에 실행되기 하는것
+- setTimeout(함수, ms초)
+
+```js
+function sayHello() {
+  console.log("hello");
+}
+setTimeout(sayHello, 5000);
+```
+
+- Date는 자바스크립트가 가지고 있는 object이다.
+- Date.getDate(), Date.getDay(), Date.getFullYear(), Date.getHours(), Date.getMinutes()
+
+```js
+const clock = document.querySelector("h2#clock");
+
+function getClock() {
+  const date = new Date();
+  clock.innerText = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
+}
+getClock(); //웹사이트 로딩 후 1초뒤 실행이 아니라 바로 실행되도록
+setInterval(getClock, 1000);
+```
+
+### PadStart
