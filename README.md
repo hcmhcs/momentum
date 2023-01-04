@@ -2,6 +2,10 @@
 
 바닐라 js로 크롬 앱 만들기
 
+---
+
+# javascript 기본문법
+
 ## 12/26
 
 ### Variables
@@ -137,6 +141,10 @@ if (isNaN(age) || age < 0) {
   console.log("Thank you for writing your age");
 }
 ```
+
+---
+
+# 브라우저와 javascript
 
 ### Document Object
 
@@ -366,6 +374,10 @@ function handleTitleClick() {
 }
 ```
 
+---
+
+# Login
+
 ### input values
 
 ```html
@@ -539,3 +551,16 @@ if (savedUsername === null) {
   paintGreetings(savedUsername);
 }
 ```
+
+---
+
+### Clock
+
+- intervals : 매번 일어나야 하는 무언가 ex) 매 2초
+- setInterval(함수, 초) : 몇 초마다 함수가 호출된다.
+
+```js
+
+```
+
+- timeout
