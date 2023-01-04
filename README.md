@@ -459,3 +459,27 @@ function handleLinkClick() {
 }
 link.addEventListener("click", handleLinkClick);
 ```
+
+### getting username
+
+- form에 username을 입력하면 form을 숨기고 hello username을 출력해준다.
+- css를 통해 로그인후에는 로그인 form을 안보이게 할 수 있다.
+- hidden class를 주면 안보이게된다.
+- string 합치는 다른방법 : 백틱이용 `${변수명}` ex) `Hello ${username}
+
+```css
+.hidden {
+  display: none;
+}
+```
+
+```js
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add("hidden");
+  const username = loginInput.value;
+  //greeting.innerText = "Hello " + username;
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove("hidden");
+}
+```
