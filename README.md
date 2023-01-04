@@ -483,3 +483,24 @@ function onLoginSubmit(event) {
   greeting.classList.remove("hidden");
 }
 ```
+
+### Saving username
+
+- 참고자료 : https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+- 브라우저를 새로고침에도 username을 기억하도록 하는것이 목표
+- localStorage api를 이용
+- localStorage.setItem("key","value") : localstorage에 저장
+- localStorage.getItem("key") : key에 대한 value를 가져온다
+- localStorage.removeItem("key") : 삭제한다.
+
+```js
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  localStorage.setItem("username", username);
+  //greeting.innerText = "Hello " + username;
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+```
