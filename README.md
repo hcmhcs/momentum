@@ -571,7 +571,7 @@ function sayHello() {
 setInterval(sayHello, 5000);
 ```
 
-### Timeout and Date
+### Timeout and Date Object
 
 - timeout : 바로 실행되지 않고 몇 초 뒤에 실행되기 하는것
 - setTimeout(함수, ms초)
@@ -598,3 +598,20 @@ setInterval(getClock, 1000);
 ```
 
 ### PadStart
+
+- 0초라고 안나오고 00초로 나오도록 text formatting.
+- padStart() : 설정한 length보다 작으면 앞에 설정한 문자열을 padding해준다.
+- padEnd() : length보다 작으면 뒤에 문자열을 padding해준다.
+- Date.getHours() 을 하면 number 타입이니까 string으로 바꿔준 후에 padStart를 해줘야한다.
+
+```js
+"1".padStart(2, "0"); // 01로 나옴
+"1".padEnd(2, "0"); // 10으로 나옴
+function getClock() {
+  const date = new Date();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+  clock.innerText = `${hours} : ${minutes} : ${seconds}`;
+}
+```
