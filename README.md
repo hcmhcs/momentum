@@ -638,3 +638,22 @@ const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 quote.innerText = todaysQuote.quote;
 author.innerText = `- ${todaysQuote.author}`;
 ```
+
+### background
+
+- js에서 만들어서 html에 추가하기
+- document.createElement() : html요소 만들기
+- document.body.appendChild() : 만든요소를 body 맨끝에 붙이기
+- document.body.prepend(): 만든요소를 body 맨앞에 붙이기
+
+```js
+const images = ["0.jpeg", "1.jpeg", "2.jpeg", "3.jpeg"];
+
+const chosenImage = images[Math.floor(Math.random() * images.length)];
+
+const bgImage = document.createElement("img"); //html 코드만들기
+
+bgImage.src = `img/${chosenImage}`;
+
+document.body.appendChild(bgImage); //body에 추가하기
+```
