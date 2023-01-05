@@ -657,3 +657,5 @@ bgImage.src = `img/${chosenImage}`;
 
 document.body.appendChild(bgImage); //body에 추가하기
 ```
+## 1/5
+- 이전내용 복습
