@@ -586,6 +586,10 @@ setTimeout(sayHello, 5000);
 - Date는 자바스크립트가 가지고 있는 object이다.
 - Date.getDate(), Date.getDay(), Date.getFullYear(), Date.getHours(), Date.getMinutes()
 
+```html
+<h2 id="clock">00:00:00</h2>
+```
+
 ```js
 const clock = document.querySelector("h2#clock");
 
@@ -628,6 +632,13 @@ function getClock() {
 - Math.ceil : 올림
 - Math.floor : 내림
 
+```html
+<div id="quote">
+  <span></span>
+  <span></span>
+</div>
+```
+
 ```js
 const quoes = [];
 const quote = document.querySelector("#quote span:first-child");
@@ -657,3 +668,18 @@ bgImage.src = `img/${chosenImage}`;
 
 document.body.appendChild(bgImage); //body에 추가하기
 ```
+
+---
+
+# Todo
+
+### setup
+
+```html
+<form id="todo-form">
+  <input type="text" placeholder="Write a To Do and Press Enter" required />
+</form>
+<ul id="todo-list"></ul>
+```
+
+- li는 js로 만들어서 추가한다.
