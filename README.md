@@ -668,6 +668,7 @@ bgImage.src = `img/${chosenImage}`;
 
 document.body.appendChild(bgImage); //body에 추가하기
 ```
+<<<<<<< HEAD
 
 ---
 
@@ -683,3 +684,7 @@ document.body.appendChild(bgImage); //body에 추가하기
 ```
 
 - li는 js로 만들어서 추가한다.
+=======
+## 1/5
+- 이전내용 복습.
+>>>>>>> 0ce629b12d0fdeff6f6356d928c136deddb08322
