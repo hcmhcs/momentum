@@ -689,3 +689,9 @@ document.body.appendChild(bgImage); //body에 추가하기
 ## 1/5
 
 - 이전내용 복습.
+
+## 1/6
+
+### adding todo
+
+### deleting todo
