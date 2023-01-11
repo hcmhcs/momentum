@@ -727,7 +727,7 @@ function deleteTodo(event) {
 }
 ```
 
-### Saving Todo
+### Saving Todos
 
 - 입략하면 local.storage에 저장하고 새로고침했을 때 local.storage에 저장된것을 불러와 list로 보여준다.
 - JSON.stringify(): js object나 array 등 어떤 것이든 string으로 바꿔주는 기능
@@ -737,8 +737,38 @@ const player ={name :"changmin};
 JSON.stringify(player);
 ```
 
+"df","df"
+
 ```js
 function savedTodo() {
   localStorage.setItem("todos", JSON.stringify(toDos));
+}
+```
+
+### Loading Todos
+
+- JSON.stringify() : js object를 string으로 변환
+- JSON.parse() :string을 js Objcet으로 변환
+
+```js
+JSON.stringify([1, 2, 3, 4]);
+// "[1,2,3,4]"
+JSON.parse("[1,2,3,4]");
+//[1,2,3,4]
+```
+
+- arrow function : 함수의 다른 표현방법
+- array.forEach(함수) : array의 갯수대로 함수를 실행한다. 함수를 실행할때 인자값으로 array의 값을 차레로 넘겨준다.
+
+```js
+parsedTodos.forEach((item) => console.log("hello", item));
+```
+
+```js
+const savedTodos = localStorage.getItem(TODOS_KEY);
+if (savedTodos !== null) {
+  const parsedTodos = JSON.parse(savedTodos);
+  toDos = parsedTodos;
+  parsedTodos.forEach(paintTodo);
 }
 ```
