@@ -684,14 +684,61 @@ document.body.appendChild(bgImage); //body에 추가하기
 <ul id="todo-list"></ul>
 ```
 
-- # li는 js로 만들어서 추가한다.
+```js
+function handleToDoSubmit(event) {
+  event.preventDefault();
+  const newTodo = toDoInput.value;
+  toDoInput.value = "";
+  toDos.push(newTodo);
+  paintTodo(newTodo);
+  savedTodo();
+}
+toDoForm.addEventListener("submit", handleToDoSubmit);
+```
 
-## 1/5
+## 1/11
 
-- 이전내용 복습.
+### Adding todos
 
-## 1/6
+```js
+function paintTodo(newTodo) {
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  span.innerText = newTodo;
+  const btn = document.createElement("button");
+  btn.innerText = "❌";
 
-### adding todo
+  btn.addEventListener("click", deleteTodo);
+  li.appendChild(span);
+  li.appendChild(btn);
+  toDoList.appendChild(li);
+}
+```
 
-### deleting todo
+### Deleting Todo
+
+- event.target.parentElement에 event가 발생한 부모요소를 찾을 수 있다.
+- event.target.parentElement를 통해 x버튼을 누르면 x버튼에 속한 li를 삭제한다.
+
+```js
+function deleteTodo(event) {
+  const li = event.target.parentElement;
+  li.remove();
+}
+```
+
+### Saving Todo
+
+- 입략하면 local.storage에 저장하고 새로고침했을 때 local.storage에 저장된것을 불러와 list로 보여준다.
+- JSON.stringify(): js object나 array 등 어떤 것이든 string으로 바꿔주는 기능
+
+```js
+const player ={name :"changmin};
+JSON.stringify(player);
+```
+
+```js
+function savedTodo() {
+  localStorage.setItem("todos", JSON.stringify(toDos));
+}
+```

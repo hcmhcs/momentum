@@ -6,7 +6,7 @@ const toDoList = document.getElementById("todo-list");
 const toDos = [];
 
 function savedTodo() {
-  localStorage.setItem("todos", toDos);
+  localStorage.setItem("todos", JSON.stringify(toDos));
 }
 
 function deleteTodo(event) {
@@ -30,7 +30,7 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value;
   toDoInput.value = "";
-  toDos.push(newTodo);
+  toDos.push(newTodo); //toDos array에 넣기
   paintTodo(newTodo);
   savedTodo();
 }
