@@ -772,3 +772,51 @@ if (savedTodos !== null) {
   parsedTodos.forEach(paintTodo);
 }
 ```
+
+### deleting localStorage
+
+- x버튼을 누르면 localstorage에 값도 삭제되도록
+- 같은 값을 지닌 애를 삭제할 수도 있으니 toDos를 array대신에 id,text를 지닌 object로 만들자
+- Date.now() 를 이용해 각자 다른 id를 만들자
+- paintTodo()에 Obj을 주고 li의 id를 newTodo.id로 준다.
+
+```js
+function handleToDoSubmit(event) {
+  event.preventDefault();
+  const newTodo = toDoInput.value;
+  toDoInput.value = "";
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newTodoObj); //toDos array에 넣기
+  paintTodo(newTodoObj);
+  savedTodo();
+}
+```
+
+- filter : array에서 무언가를 지우고 싶을 때 지우는게 아니라 지울 item을 제외하고 새 array를 만드는것이다.
+- filter에 들어가는 함수는 남아있을 item은 true를 리턴하고 제외할 item은 false로 해주면 true인 item들로만의 array를 새로 마는다.
+
+```js
+function sexyFilter(item) {
+  if (item > 1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log([1, 2, 3, 4].filter(sexyFilter));
+// [2,3,4]
+consoel.log([1,2,3,4].filter((item)=>return item !==3))
+//3을 지우고 싶을때
+```
+
+```js
+function deleteTodo(event) {
+  const li = event.target.parentElement;
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  savedTodo();
+  li.remove();
+}
+```
