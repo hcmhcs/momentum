@@ -820,3 +820,33 @@ function deleteTodo(event) {
   li.remove();
 }
 ```
+
+- 추가기능 : logout 에서 localStoarge에 username 지우기
+- login하기전까지 todoList안보이게하기
+
+## 1/12
+
+# Weather
+
+### geolocation
+
+- navigator.geolocation.getCurrentPosition() : 인자2개
+- 잘실행됬을때 실행할 함수, 에러함수
+
+```js
+function onGeoOk(position) {
+  const lat = position.coords.latitude;
+  const lng = position.coords.longitude;
+  console.log("You live in ", lat, lng);
+}
+function onGeoErr() {
+  alert("Can't find you. No weather for you.");
+}
+
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoErr);
+```
+
+### api
+
+- 얻은 위도,경도를 openweathermap.org 에서 api를 확용하기
+- openweathermap.org
