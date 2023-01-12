@@ -850,3 +850,5 @@ navigator.geolocation.getCurrentPosition(onGeoOk, onGeoErr);
 
 - 얻은 위도,경도를 openweathermap.org 에서 api를 확용하기
 - openweathermap.org
+- fetch : 직접 url눌러서 갈필요없이 js가 대신 Url을 부른다.
+- promise 개념 배우기
