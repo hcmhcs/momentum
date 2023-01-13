@@ -821,9 +821,6 @@ function deleteTodo(event) {
 }
 ```
 
-- 추가기능 : logout 에서 localStoarge에 username 지우기
-- login하기전까지 todoList안보이게하기
-
 ## 1/12
 
 # Weather
@@ -852,3 +849,11 @@ navigator.geolocation.getCurrentPosition(onGeoOk, onGeoErr);
 - openweathermap.org
 - fetch : 직접 url눌러서 갈필요없이 js가 대신 Url을 부른다.
 - promise 개념 배우기
+
+---
+
+## 추후해야할 것
+
+- css로 꾸며보기
+- 추가기능 : logout 에서 localStoarge에 username 지우기
+- login하기전까지 todoList안보이게하기
